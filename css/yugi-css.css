@@ -1,0 +1,52 @@
+*:not(.form-item){
+  box-sizing : border-box;
+}
+
+html {
+
+}
+
+body {
+	font-family: Montserrat, Open Sans, Raleway, sans-serif;
+    margin: 0;
+    background-color: #181818;
+    color: #fff;
+}
+
+html, body {
+
+}
+
+img {
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+strong {
+	font-weight: inherit;
+	font-weight: 800;
+}
+
+red {
+	color: red;
+}
+
+yellow {
+	color: yellow;
+}
+
+green {
+	color: green;
+}
+
+blue {
+	color: blue;
+}
+
+white {
+	color: white;
+}
+
+black {
+	color: black;
+}

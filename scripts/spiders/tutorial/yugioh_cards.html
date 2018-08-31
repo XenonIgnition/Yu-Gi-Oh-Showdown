@@ -1,0 +1,1953 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+
+
+
+	
+
+	
+	<meta http-equiv="x-ua-compatible" content="IE=10" >
+	<meta http-equiv="x-ua-compatible" content="IE=EmulateIE10" >
+
+	<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta http-equiv="Content-Language" content="en">
+	<meta http-equiv="Content-Style-Type" content="text/css">
+	<meta http-equiv="Content-Script-Type" content="text/javascript">
+	<meta http-equiv="imagetoolbar" content="no">
+
+	<meta property="og:site_name" content="Yu-Gi-Oh! CARD DATABASE">
+
+	<meta property="og:image" content="http://www.db.yugioh-card.com/sns/logo_ocg_f.png" />
+	<meta property="og:type" content="product" />
+	<meta property="og:locale" content="en_US" />
+
+	<meta name="twitter:card" content="summary"/>
+
+	<meta name="twitter:image" content="http://www.db.yugioh-card.com/sns/logo_ocg_t.png" />
+	<script type="text/javascript" src="/yugiohdb/ga.js"></script>
+	<meta name="copyright" content="KONAMI">
+	<link rel="shortcut icon" href="external/image/yugioh.ico">
+	<link rel="apple-touch-icon" href="external/image/apple-touch-icon.png">
+
+	
+
+
+	
+
+
+	
+
+
+	
+	
+	
+	<meta name="keywords" content=" Card Search Results - View as Gallery | Yu-Gi-Oh! TRADING CARD GAME - CARD DATABASE KONAMI,yugioh,Yu-Gi-Oh,TCG,card,database,card,list,Forbidden,Limited,Semi-limited,Cards," />
+	<meta name="description" content="The Yu-Gi-Oh! TCG Card Database is an official Konami Site for the Yu-Gi-Oh! Trading Card Game." />
+
+	<meta property="og:title" content=" Card Search Results - View as Gallery | Yu-Gi-Oh! TRADING CARD GAME - CARD DATABASE" />
+	<meta property="og:url" content="http%3A%2F%2Fwww.db.yugioh-card.com%2Fyugiohdb%2Fcard_search.action%3Fope%3D1%26sess%3D1%26stype%3D1%26othercon%3D2%26rp%3D10%26page%3D1%26request_locale%3Den"/>
+
+	<meta property="og:description" content="The Yu-Gi-Oh! TCG Card Database is an official Konami Site for the Yu-Gi-Oh! Trading Card Game." />
+
+	<meta name="twitter:title" content=" Card Search Results - View as Gallery | Yu-Gi-Oh! TRADING CARD GAME - CARD DATABASE" />
+	<meta name="twitter:description" content=" The Yu-Gi-Oh! TCG Card Database is an official Konami Site for the Yu-Gi-Oh! Trading Card Game." />
+
+	<meta name="twitter:url" content="http%3A%2F%2Fwww.db.yugioh-card.com%2Fyugiohdb%2Fcard_search.action%3Fope%3D1%26sess%3D1%26stype%3D1%26othercon%3D2%26rp%3D10%26page%3D1%26request_locale%3Den" />
+
+
+
+
+	
+
+<title>Card Search Results - View as Gallery | Yu-Gi-Oh! TRADING CARD GAME - CARD DATABASE"></title>
+
+
+
+<!--[if lt IE 9]>
+	<script type="text/javascript" src="external/html5/js/html5shiv.js"></script>
+<![endif]-->
+	<script type="text/javascript" src="external/jquery/jquery-1.7.2.js"></script>
+	<script type="text/javascript" src="external/jquery/jquery-ui-1.8.16.custom/js/jquery-ui-1.8.16.custom.min.js"></script>
+ 	<script type="text/javascript" src="external/jquery/jquery.dropkick/js/jquery.dropkick-1.0.0.js"></script>
+	<script type="text/javascript" src="external/js/common.js"></script>
+
+	<script type="text/javascript" src="external/jquery/scrolltopcontrol.js"></script>
+
+
+
+
+
+	<link type="text/css" rel="stylesheet" href="external/jquery/jquery-ui-1.8.16.custom/css/ui-lightness/jquery-ui-1.8.16.custom.css">
+	<link type="text/css" rel="stylesheet" href="external/jquery/jquery.dropkick/css/dropkick.css">
+	<link type="text/css" rel="stylesheet" href="external/css/common.css?20171030">
+
+	<link rel="stylesheet" type="text/css" href="external/css/CardResultNormal.css">
+
+	<script type="text/javascript">
+	<!--
+
+	$(function() {
+		
+
+		$('#keyword').val($('#keyword_bef').val());
+		$('#stype').val('1');
+		$('#ctype').val('');
+		ChangeCtype('', '');
+		$('#starfr').val('');
+		$('#starto').val('');
+		$('#pscalefr').val('');
+		$('#pscaleto').val('');
+		
+		
+		
+		
+		
+		
+		
+		
+
+		
+		
+			
+			$('#link_and').prop('checked', false).closest('a').addClass('radio_off_left').removeClass('radio_on_left').find('img').attr('src', 'external/image/parts/check_off.png');
+			$('#link_or').prop('checked', true).closest('a').addClass('radio_on_right').removeClass('radio_off_right').find('img').attr('src', 'external/image/parts/check_on.png');
+		
+
+		$('#linkmarkerfr').val('');
+		$('#linkmarkerto').val('');
+		$('#atkfr').val('');
+		$('#atkto').val('');
+		$('#deffr').val('');
+		$('#defto').val('');
+
+		$('#pscale').val('');
+		
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+	
+		$('#othercon_and').prop('checked', false).closest('a').addClass('radio_off_left').removeClass('radio_on_left').find('img').attr('src', 'external/image/parts/check_off.png');
+		$('#othercon_or').prop('checked', true).closest('a').addClass('radio_on_right').removeClass('radio_off_right').find('img').attr('src', 'external/image/parts/check_on.png');
+	
+		$('#stype').dropkick({
+			theme: 'stype_en'
+		});
+		$('#ctype').dropkick({
+			change: function (value, label) {
+				ChangeCtype(value, label);
+			}
+		});
+
+		$('#sort').val('1');
+		$('#rp').val('10');
+		$('#mode').val('1');
+
+		$('#sort').dropkick({
+			theme: 'sort_en',
+			change: function (value, label) {
+				
+				location.href = '/yugiohdb/card_search.action'
+					+ '?ope=1'
+					+ '&sess=2'
+					
+					+ '&sort=' + encodeURIComponent($('#sort').val())
+					+ '&rp=' + encodeURIComponent($('#rp').val())
+					+ '&page=1';
+			}
+		});
+
+		$('#rp').dropkick({
+			theme: 'rp_en',
+			change: function (value, label) {
+				
+				location.href = '/yugiohdb/card_search.action'
+					+ '?ope=1'
+					+ '&sess=2'
+					+ '&sort=' + encodeURIComponent($('#sort').val())
+					+ '&rp=' + encodeURIComponent($('#rp').val())
+					+ '&page=1';
+			}
+		});
+
+		$('#mode').dropkick({
+			theme: 'mode_en',
+			change: function (value, label) {
+				
+				location.href = '/yugiohdb/card_search.action'
+							+ '?ope=1'
+							+ '&sess=4'
+							
+							+ '&mode=' + value;
+			}
+		});
+
+		
+
+	
+		$('#card_image_0_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=7128&ciid=1&enc=Sfl4OZyZVr1EW3fAF-5t1g').show();
+	
+
+	
+		$('#card_image_1_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=7315&ciid=1&enc=8I1JTnbgWPv55PVG_WVZtg').show();
+	
+
+	
+		$('#card_image_2_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=12653&ciid=1&enc=Zq-CxLq5lW1Spqr3kPWHxg').show();
+	
+
+	
+		$('#card_image_3_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=6994&ciid=1&enc=9f9xH1Xh3GIU0-1NL4QvGA').show();
+	
+
+	
+		$('#card_image_4_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=11391&ciid=1&enc=mZbYkaGWEjiZlQe6vCievA').show();
+	
+
+	
+		$('#card_image_5_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=6032&ciid=1&enc=Dn64qFCXAx_KqmRd3gdqlg').show();
+	
+
+	
+		$('#card_image_6_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=5139&ciid=1&enc=_qzx2-mZvz1TERGDS2c9zg').show();
+	
+
+	
+		$('#card_image_7_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=6053&ciid=1&enc=mBGbqDtg30NK5LYexPF0bg').show();
+	
+
+	
+		$('#card_image_8_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=4446&ciid=1&enc=rvnCFnXCJ1mUTVEkqvPmjA').show();
+	
+
+	
+		$('#card_image_9_1').attr('src', '/yugiohdb/get_image.action?type=1&cid=4806&ciid=1&enc=705eZaKB8EaQTvpZQiQf1A').show();
+	
+
+
+
+		
+		$('.list_style ul li').click(function() {
+			window.open($('.link_value', this).val());
+			return false
+		});
+
+
+		
+		
+	});
+
+	
+	function ChangePage(page) {
+		location.href = '/yugiohdb/card_search.action'
+					+ '?ope=1'
+					+ '&sess=3'
+					+ '&page=' + page;
+	}
+	
+	$('.box_card_linkmarker').load(function(){
+/* 		if ($(this).hasClass('radio_off_left')) {
+			$(this).addClass('radio_on_left').removeClass('radio_off_left');
+			$(':radio', this).prop('checked', true);
+			$($(this).next()).addClass('radio_off_right').removeClass('radio_on_right');
+			$(':radio', $(this).next()).prop('checked', false);
+			$('img', this).attr('src', 'external/image/parts/check_on.png');
+			$('.othercon_right img').attr('src', 'external/image/parts/check_off.png');
+		} */
+	 });
+	//-->
+	</script>
+</head>
+
+
+
+	
+
+<body>
+
+<div id="wrapper">
+	<header>
+		<div class="h1_set">Yu-Gi-Oh! TRADING CARD GAME - CARD DATABASE</div>
+		<div id="header_meta">
+			<a href="https://www.konami.com/games/" target="_blank"><img src="external/image/logo_konami.png" alt="KONAMI" id="konami" class="ui-draggable"></a>
+
+
+	
+			<nav id="language">
+				<span>
+		
+		English
+		
+		
+		
+		
+		
+				</span>
+				<ul>
+					<li><a href="javascript:ChangeLanguage('ja')" >日本語</a></li>
+					<li><a href="javascript:ChangeLanguage('en')" class="current">English</a></li>
+					<li><a href="javascript:ChangeLanguage('de')" >Deutsch</a></li>
+					<li><a href="javascript:ChangeLanguage('fr')" >Fran&ccedil;ais</a></li>
+					<li><a href="javascript:ChangeLanguage('it')" >Italiano</a></li>
+					<li><a href="javascript:ChangeLanguage('es')" >Espa&ntilde;ol</a></li>
+					<li><a href="javascript:ChangeLanguage('pt')" >Portugues</a></li>
+				</ul>
+			</nav>
+	
+
+		</div><!--#header_meta-->
+		<div id="header_menu">
+			<div id="main_logo">
+				<a href="/yugiohdb/"><img src="external/image/en/logo_tcg.png" alt="Yu-Gi-Oh! TRADING CARD GAME - CARD DATABASE" title="TOP"></a>
+			</div>
+			<nav>
+				<div id="menber_menu">
+				
+				</div><!--#menber_menu-->
+				<ul id="main_menu">
+					<li><a href="/yugiohdb/card_search.action"><img src="external/image/en/menu_btn_home.png" alt="CARD SEARCH"></a></li>
+					<li><a href="/yugiohdb/card_list.action"><img src="external/image/en/menu_btn_cardlist.png" alt="Card Lists"></a></li>
+					<li><a href="/yugiohdb/forbidden_limited.action"><img src="external/image/en/menu_btn_limitr.png" alt="Forbidden &amp; Limited Cards"></a></li>
+					
+					<li><a href="/yugiohdb/deck_search.action"><img src="external/image/en/menu_btn_decks.png" alt="Deck Search"></a></li>
+	
+					<li class="last"><a href="/yugiohdb/member_login.action"><img src="external/image/en/menu_btn_login.png" alt="Log in"></a></li>
+	
+	
+				</ul><!--#main_menu-->
+			</nav>
+		</div><!-- #header_menu-->
+	</header>
+
+
+	<nav id="pan_nav">
+		<ul>
+			<li><a href="/yugiohdb/">HOME</a></li><!--
+		 --><li>&raquo;</li><!--
+
+
+		 --><li>Card Search Results</li>
+
+		</ul>
+	</nav><!--#pan_nav-->
+
+	<input type="hidden" id="keyword_bef" value="">
+	
+
+	
+	
+	<article>
+
+		<div id="article_body">
+
+
+	
+	
+		
+
+			<script type="text/javascript">
+			<!--
+
+			$(function(){
+
+				
+				$('#keyword[value=]').css('color', '#bbb').val('Enter Keyword');
+				$('#keyword').focus(function(){
+					if ($(this).val() == 'Enter Keyword') {
+						$(this).val('').css('color', '#555');
+					}
+				}).blur(function(){
+					if ($(this).val() == ''){
+						$(this).css('color', '#bbb').val('Enter Keyword');
+					}
+					if ($(this).val() != 'Enter Keyword') {
+						$(this).css('color', '#555');
+					}
+				});
+
+
+				
+				$('.search_box_tips').hover(
+					function(e){
+
+						if (($(this).closest('.search_body').css('opacity') != 1)) {
+							return false;
+						}
+
+						var tips_txt = $(this).attr('alt');
+						$(this).after('<span id="search_box_tips"><span></span></span>');
+						$('#search_box_tips span').text(tips_txt);
+
+						var offset = $(this).offset();
+						var pos_x = offset.left - 30;
+						var pos_y = offset.top - 34;
+
+						$('#search_box_tips').css({
+							'position': 'absolute',
+							'top': pos_y,
+							'left': pos_x,
+							'display': 'inline-block',
+							'background': 'url(external/image/parts/search_box_tips_bk.png) right bottom no-repeat',
+							'height': '35px',
+							'padding-right': '4px'
+						});
+
+						$('#search_box_tips span').css({
+							'display': 'inline-block',
+							'background': 'url(external/image/parts/search_box_tips_bk.png) left top no-repeat',
+							'line-height': '23px',
+							'height': '35px',
+							'padding': '0 5px 0 20px',
+							'font-weight': 'bold',
+							'font-size': '12px',
+							'color': '#6a3807'
+						});
+					},
+					function(e){
+						if ($(this).closest('.search_body').css('opacity') != 1) {
+							return false;
+						}
+						$('#search_box_tips').remove();
+					}
+				);
+
+				
+				$('.attreffe, .species, .other, .jogai').click(function(){
+					if ($(this).hasClass('button_off')) {
+						$(this).addClass('button_on').removeClass('button_off');
+						$(':checkbox', this).prop('checked', true);
+					} else {
+						$(this).addClass('button_off').removeClass('button_on');
+						$(':checkbox', this).prop('checked', false);
+					}
+				});
+				
+				$('.othercon_left').click(function(){
+					if ($(this).hasClass('radio_off_left')) {
+						$(this).addClass('radio_on_left').removeClass('radio_off_left');
+						$(':radio', this).prop('checked', true);
+						$($(this).next()).addClass('radio_off_right').removeClass('radio_on_right');
+						$(':radio', $(this).next()).prop('checked', false);
+						$('img', this).attr('src', 'external/image/parts/check_on.png');
+						$('.othercon_right img').attr('src', 'external/image/parts/check_off.png');
+					}
+				});
+				$('.othercon_right').click(function(){
+					if ($(this).hasClass('radio_off_right')) {
+						$(this).addClass('radio_on_right').removeClass('radio_off_right');
+						$(':radio', this).prop('checked', true);
+						$($(this).prev()).addClass('radio_off_left').removeClass('radio_on_left');
+						$(':radio', $(this).prev()).prop('checked', false);
+						$('img', this).attr('src', 'external/image/parts/check_on.png');
+						$('.othercon_left img').attr('src', 'external/image/parts/check_off.png');
+					}
+				});
+
+				
+				$('.link_left').click(function(){
+					if ($(this).hasClass('radio_off_left')) {
+						$(this).addClass('radio_on_left').removeClass('radio_off_left');
+						$(':radio', this).prop('checked', true);
+						$($(this).next()).addClass('radio_off_right').removeClass('radio_on_right');
+						$(':radio', $(this).next()).prop('checked', false);
+						$('img', this).attr('src', 'external/image/parts/check_on.png');
+						$('.link_right img').attr('src', 'external/image/parts/check_off.png');
+					}
+				});
+				$('.link_right').click(function(){
+					if ($(this).hasClass('radio_off_right')) {
+						$(this).addClass('radio_on_right').removeClass('radio_off_right');
+						$(':radio', this).prop('checked', true);
+						$($(this).prev()).addClass('radio_off_left').removeClass('radio_on_left');
+						$(':radio', $(this).prev()).prop('checked', false);
+						$('img', this).attr('src', 'external/image/parts/check_on.png');
+						$('.link_left img').attr('src', 'external/image/parts/check_off.png');
+					}
+				});
+
+				
+				$('#condition_toggle').click(function(){
+					$('#search_by_attack_and_defense_and_level, #search_by_attribute, #search_by_effect, #search_by_species, #search_by_other, #search_by_jogai').toggle();
+				});
+
+				
+				$('#form_search input:text').keypress(function(e){
+					if (e.keyCode == 13) {
+						Search();
+					}
+				});
+
+			});
+
+			
+			function ChangeCtype(value, label) {
+				switch (value) {
+
+				case '':
+				case '1':
+					$('#search_by_attack_and_defense_and_level .search_body #search_set').find(':input').prop('disabled', false);
+					$('#search_by_attack_and_defense_and_level .search_body #search_set').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+
+					$('#search_by_attribute .search_body .search_body_set').find(':input').prop('disabled', false);
+					$('#search_by_attribute .search_body .search_body_set').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+
+					$('#search_by_effect .search_body .search_body_set input:checkbox[value=21]').prop('disabled', false);
+					$('#search_by_effect .search_body .search_body_set input:checkbox[value=21]').closest('a').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+					$('#search_by_effect .search_body .search_body_set input:checkbox:not([value=20],[value=21],[value=24])').prop('disabled', false);
+					$('#search_by_effect .search_body .search_body_set input:checkbox:not([value=20],[value=21],[value=24])').closest('a').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+
+					if (value == '') {
+						$('#search_by_effect .search_body .search_body_set').find(':input').prop('disabled', false);
+						$('#search_by_effect .search_body .search_body_set').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+					} else {
+						$('#search_by_effect .search_body .search_body_set').find(':input').prop('disabled', true);
+						$('#search_by_effect .search_body .search_body_set').fadeTo(0, 0.2).find('img').fadeTo(0, 0.2);
+					}
+
+					$('#search_by_species .search_body .search_body_set').find(':input').prop('disabled', false);
+					$('#search_by_species .search_body .search_body_set').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+
+					$('#search_by_other .search_body .search_body_set').find(':input').prop('disabled', false);
+					$('#search_by_other .search_body .search_body_set').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+
+					$('#search_by_jogai .search_body .search_body_set').find(':input').prop('disabled', false);
+					$('#search_by_jogai .search_body .search_body_set').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+					break;
+
+				case '2':
+				case '3':
+					$('#search_by_attack_and_defense_and_level .search_body #search_set').find(':input').prop('disabled', true);
+					$('#search_by_attack_and_defense_and_level .search_body #search_set').fadeTo(0, 0.2).find('img').fadeTo(0, 0.2);
+
+					$('#search_by_attribute .search_body .search_body_set').find(':input').prop('disabled', true);
+					$('#search_by_attribute .search_body .search_body_set').fadeTo(0, 0.2).find('img').fadeTo(0, 0.2);
+
+					$('#search_by_effect .search_body .search_body_set').find(':input').prop('disabled', false);
+					$('#search_by_effect .search_body .search_body_set').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+					$('#search_by_effect .search_body .search_body_set input:checkbox[value=21]').prop('disabled', false);
+					$('#search_by_effect .search_body .search_body_set input:checkbox[value=21]').closest('a').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+					$('#search_by_effect .search_body .search_body_set input:checkbox:not([value=20],[value=21],[value=24])').prop('disabled', false);
+					$('#search_by_effect .search_body .search_body_set input:checkbox:not([value=20],[value=21],[value=24])').closest('a').fadeTo(0, 1.0).find('img').fadeTo(0, 1.0);
+
+					$('#search_by_species .search_body .search_body_set').find(':input').prop('disabled', true);
+					$('#search_by_species .search_body .search_body_set').fadeTo(0, 0.2).find('img').fadeTo(0, 0.2);
+
+					$('#search_by_other .search_body .search_body_set').find(':input').prop('disabled', true);
+					$('#search_by_other .search_body .search_body_set').fadeTo(0, 0.2).find('img').fadeTo(0, 0.2);
+
+					$('#search_by_jogai .search_body .search_body_set').find(':input').prop('disabled', true);
+					$('#search_by_jogai .search_body .search_body_set').fadeTo(0, 0.2).find('img').fadeTo(0, 0.2);
+
+					if (value == '2') {
+						$('#search_by_effect .search_body .search_body_set input:checkbox[value=21]').prop('disabled', true);
+						$('#search_by_effect .search_body .search_body_set input:checkbox[value=21]').closest('a').fadeTo(0, 0.2).find('img').fadeTo(0, 0.2);
+					} else {
+						$('#search_by_effect .search_body .search_body_set input:checkbox:not([value=20],[value=21],[value=24])').prop('disabled', true);
+						$('#search_by_effect .search_body .search_body_set input:checkbox:not([value=20],[value=21],[value=24])').closest('a').fadeTo(0, 0.2).find('img').fadeTo(0, 0.2);
+					}
+
+					break;
+
+				default:
+					break;
+				}
+			}
+
+			
+			function Search() {
+				if ($('#keyword').css('color') == '#bbb' || $('#keyword').css('color') == 'rgb(187, 187, 187)') {
+					$('#keyword').val('');
+				}
+				$('#form_search').get(0).submit();
+			}
+
+			//-->
+			</script>
+
+			<form id="form_search" action="/yugiohdb/card_search.action" method="GET">
+				<input type="hidden" name="ope" value="1">
+				<input type="hidden" name="sess" value="1">
+
+				<div id="search_box">
+
+					<div id="search_by_keyword_and_type" style="padding:5px 8px;">
+						<table style="width:100%;">
+							<col width="36">
+							<col width="325">
+							<col width="249">
+							<col width="176">
+							<col width="*">
+							<tr valign="middle">
+								<td>
+									<img src="external/image/parts/icon_search.png" alt="Search">
+								</td>
+								<td valign="top">
+									<input type="text" id="keyword" name="keyword" style="width:300px;" maxlength="50">
+								</td>
+								<td valign="top">
+									<select id="stype" name="stype" style="width:218px;">
+										<option value="1">Search by Card Name</option>
+										<option value="2">Search by Card Text</option>
+										<option value="3">Search by Pendulum Effect</option>
+										<option value="4">Search by Card Number</option>
+									</select>
+								</td>
+								<td valign="top">
+									<select id="ctype" name="ctype" style="width:145px;">
+										<option value="">All Cards</option>
+
+										<option value="1">Monster Cards</option>
+
+										<option value="2">Spell Cards</option>
+
+										<option value="3">Trap Cards</option>
+
+									</select>
+								</td>
+								<td>
+									<a href="javascript:Search();" class="black_btn"><b>Search</b></a>
+								</td>
+							</tr>
+						</table>
+					</div>
+
+					<div id="condition_toggle">
+						Refine Search
+					</div><!--#condition_toggle-->
+
+					<div id="search_by_attack_and_defense_and_level" class="none">
+						<div class="search_body" style="border-bottom:solid 1px #414a56;padding-bottom: 5px;">
+							<div id="search_set">
+								<div class="search_l">
+									<div class="search_top">
+										<span id="level_rank_title">
+											<b>Level/Rank</b>
+											<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by Level/Rank (0-12)">
+										</span>
+										<span id="level_rank_input">
+											<input type="text" id="starfr" name="starfr" maxlength="2">
+											<input type="text" id="starto" name="starto" maxlength="2">
+										</span>
+									</div>
+									<div class="search_bottom">
+										<span id="pen_scale_title">
+											<b>Pendulum</b>
+											<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by Pendulum Scale">
+										</span>
+										<span id="pen_scale_input">
+											<input type="text" id="pscalefr" name="pscalefr" maxlength="2">
+											<input type="text" id="pscaleto" name="pscaleto" maxlength="2">
+										</span>
+									</div>
+								</div>
+								<div class="search_m">
+									<div class="search_m_l">
+										<div class="search_top">
+											<span id="link_title">
+												<b>Link</b>
+												<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by Link Rating/Arrow Direction">
+											</span>
+										</div>
+										<div class="search_bottom">
+											<span id="link_input">
+												<input type="text" id="linkmarkerfr" name="linkmarkerfr" maxlength="2">
+												<input type="text" id="linkmarkerto" name="linkmarkerto" maxlength="2">
+											</span>
+										</div>
+									</div>
+									<div class="search_m_r">
+										<div class="link_m_set">
+											<form>
+												<input type="checkbox" id="linkbtn7" name="linkbtn7" value="7"><label class="linkbtn7" for="linkbtn7"></label>
+												<input type="checkbox" id="linkbtn8" name="linkbtn8" value="8"><label class="linkbtn8" for="linkbtn8"></label>
+												<input type="checkbox" id="linkbtn9" name="linkbtn9" value="9"><label class="linkbtn9" for="linkbtn9"></label>
+												<input type="checkbox" id="linkbtn4" name="linkbtn4" value="4"><label class="linkbtn4" for="linkbtn4"></label>
+												<input type="checkbox" id="linkbtn6" name="linkbtn6" value="6"><label class="linkbtn6" for="linkbtn6"></label>
+												<input type="checkbox" id="linkbtn1" name="linkbtn1" value="1"><label class="linkbtn1" for="linkbtn1"></label>
+												<input type="checkbox" id="linkbtn2" name="linkbtn2" value="2"><label class="linkbtn2" for="linkbtn2"></label>
+												<input type="checkbox" id="linkbtn3" name="linkbtn3" value="3"><label class="linkbtn3" for="linkbtn3"></label>
+											</form>
+										</div>
+										<div id="and_or2">
+											<a href="javascript:void(0);" class="link_left radio_off_left">
+												<img alt="">
+												<b>and</b>
+												<input type="radio" id="link_and" name="link_m" value="1" class="none">
+											</a>
+											<a href="javascript:void(0);" class="link_right radio_off_right" style="">
+												<img alt="">
+												<b>or</b>
+												<input type="radio" id="link_or"  name="link_m" value="2" class="none">
+											</a>
+										</div>
+									</div>
+								</div>
+								<div class="search_r">
+									<div class="search_top">
+										<span id="attack_title">
+											<b>ATK</b>
+											<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by ATK (Max. 5000)">
+										</span>
+										<span id="attack_input">
+											<input type="text" id="atkfr" name="atkfr" maxlength="4">
+											<input type="text" id="atkto" name="atkto" maxlength="4">
+										</span>
+									</div>
+									<div class="search_bottom">
+										<span id="defense_title">
+											<b>DEF</b>
+											<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by DEF (Max. 5000)">
+										</span>
+										<span id="defense_input">
+											<input type="text" id="deffr" name="deffr" maxlength="4">
+											<input type="text" id="defto" name="defto" maxlength="4">
+										</span>
+									</div>
+								</div>
+							</div>
+						</div><!--.search_body-->
+					</div><!--#search_by_attack_and_defense_and_level-->
+
+
+					<div id="search_by_attribute" style="margin-bottom:-7px;border-top:solid 1px #90a6b0;" class="none">
+						<div class="search_body">
+							<div class="search_body_set">
+								<div class="search_title">
+									<b>Attribute</b>
+									<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by Attribute">
+								</div>
+								<div class="search_btn">
+	
+									<a href="javascript:void(0);" class="attreffe button_off">
+		
+										<div style="background:url(external/image/parts/attribute/attribute_icon_dark.png) 1px 2px no-repeat;">
+											<span style="padding-left:18px;">
+												DARK
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="attr" class="none" value="12">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off">
+		
+										<div style="background:url(external/image/parts/attribute/attribute_icon_light.png) 1px 2px no-repeat;">
+											<span style="padding-left:18px;">
+												LIGHT
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="attr" class="none" value="11">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off">
+		
+										<div style="background:url(external/image/parts/attribute/attribute_icon_earth.png) 1px 2px no-repeat;">
+											<span style="padding-left:18px;">
+												EARTH
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="attr" class="none" value="15">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off">
+		
+										<div style="background:url(external/image/parts/attribute/attribute_icon_water.png) 1px 2px no-repeat;">
+											<span style="padding-left:18px;">
+												WATER
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="attr" class="none" value="13">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off">
+		
+										<div style="background:url(external/image/parts/attribute/attribute_icon_fire.png) 1px 2px no-repeat;">
+											<span style="padding-left:18px;">
+												FIRE
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="attr" class="none" value="14">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off">
+		
+										<div style="background:url(external/image/parts/attribute/attribute_icon_wind.png) 1px 2px no-repeat;">
+											<span style="padding-left:18px;">
+												WIND
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="attr" class="none" value="16">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off">
+		
+										<div style="background:url(external/image/parts/attribute/attribute_icon_divine.png) 1px 2px no-repeat;">
+											<span style="padding-left:18px;">
+												DIVINE
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="attr" class="none" value="17">
+									</a>
+	
+								</div>
+							</div>
+						</div><!--.search_body-->
+					</div><!--#search_by_attribute-->
+
+
+
+					<div id="search_by_effect" style="border-bottom:solid 1px #414a56;" class="none">
+						<div class="search_body" style="padding-top: 2px;">
+							<div class="search_body_set">
+								<div class="search_title">
+									<b>Icon</b>
+									<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by Icon">
+								</div>
+								<div class="search_btn">
+	
+									<a href="javascript:void(0);" class="attreffe button_off effect_1_en">
+		
+										<div style="background:url(external/image/parts/effect/effect_icon_equip.png) 1px 2px no-repeat">
+											<span style="padding-left:18px;">
+												Equip
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="effe" class="none" value="23">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off effect_2_en">
+		
+										<div style="background:url(external/image/parts/effect/effect_icon_field.png) 1px 2px no-repeat">
+											<span style="padding-left:18px;">
+												Field
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="effe" class="none" value="22">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off effect_3_en">
+		
+										<div style="background:url(external/image/parts/effect/effect_icon_quickplay.png) 1px 2px no-repeat">
+											<span style="padding-left:18px;">
+												Quick-Play
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="effe" class="none" value="25">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off effect_4_en">
+		
+										<div style="background:url(external/image/parts/effect/effect_icon_ritual.png) 1px 2px no-repeat">
+											<span style="padding-left:18px;">
+												Ritual
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="effe" class="none" value="26">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off effect_5_en">
+		
+										<div style="background:url(external/image/parts/effect/effect_icon_continuous.png) 1px 2px no-repeat">
+											<span style="padding-left:18px;">
+												Continuous
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="effe" class="none" value="24">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off effect_6_en">
+		
+										<div style="background:url(external/image/parts/effect/effect_icon_counter.png) 1px 2px no-repeat">
+											<span style="padding-left:18px;">
+												Counter
+											</span>
+										</div>
+		
+		
+										<input type="checkbox" name="effe" class="none" value="21">
+									</a>
+	
+									<a href="javascript:void(0);" class="attreffe button_off effect_7_en">
+		
+		
+										<span style="padding-left:18px;">
+											Normal
+										</span>
+		
+										<input type="checkbox" name="effe" class="none" value="20">
+									</a>
+	
+								</div>
+							</div>
+						</div><!--.search_body-->
+					</div><!--#search_by_effect-->
+
+
+
+					<div id="search_by_species" style="border-top:solid 1px #90a6b0;border-bottom:solid 1px #414a56;" class="none">
+						<div class="search_body">
+							<div class="search_body_set">
+								<div class="search_title">
+									<b>Monster Type</b>
+									<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by Monster Type">
+								</div>
+								<div class="search_btn">
+	
+									<a href="javascript:void(0);" class="species button_off species_1_en">
+										Spellcaster
+										<input type="checkbox" name="species" class="none" value="18">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_2_en">
+										Dragon
+										<input type="checkbox" name="species" class="none" value="1">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_3_en">
+										Zombie
+										<input type="checkbox" name="species" class="none" value="2">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_4_en">
+										Warrior
+										<input type="checkbox" name="species" class="none" value="15">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_5_en">
+										Beast-Warrior
+										<input type="checkbox" name="species" class="none" value="12">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_6_en">
+										Beast
+										<input type="checkbox" name="species" class="none" value="11">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_7_en">
+										Winged Beast
+										<input type="checkbox" name="species" class="none" value="16">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_8_en">
+										Fiend
+										<input type="checkbox" name="species" class="none" value="3">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_9_en">
+										Fairy
+										<input type="checkbox" name="species" class="none" value="17">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_10_en">
+										Insect
+										<input type="checkbox" name="species" class="none" value="10">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_11_en">
+										Dinosaur
+										<input type="checkbox" name="species" class="none" value="9">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_12_en">
+										Reptile
+										<input type="checkbox" name="species" class="none" value="20">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_13_en">
+										Fish
+										<input type="checkbox" name="species" class="none" value="8">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_14_en">
+										Sea Serpent
+										<input type="checkbox" name="species" class="none" value="5">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_15_en">
+										Aqua
+										<input type="checkbox" name="species" class="none" value="14">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_16_en">
+										Pyro
+										<input type="checkbox" name="species" class="none" value="4">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_17_en">
+										Thunder
+										<input type="checkbox" name="species" class="none" value="19">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_18_en">
+										Rock
+										<input type="checkbox" name="species" class="none" value="6">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_19_en">
+										Plant
+										<input type="checkbox" name="species" class="none" value="13">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_20_en">
+										Machine
+										<input type="checkbox" name="species" class="none" value="7">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_21_en">
+										Psychic
+										<input type="checkbox" name="species" class="none" value="21">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_22_en">
+										Divine-Beast
+										<input type="checkbox" name="species" class="none" value="22">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_23_en">
+										Wyrm
+										<input type="checkbox" name="species" class="none" value="26">
+									</a>
+	
+									<a href="javascript:void(0);" class="species button_off species_24_en">
+										Cyberse
+										<input type="checkbox" name="species" class="none" value="27">
+									</a>
+	
+								</div>
+							</div>
+						</div><!--.search_body-->
+					</div><!--#search_by_species-->
+
+
+
+					<div id="search_by_other" style="border-top:solid 1px #90a6b0;border-bottom:solid 1px #414a56;" class="none">
+						<div class="search_body">
+							<div class="search_body_set">
+								<div class="search_title">
+									<b>Card Type</b>
+									<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Search by Card Type (and/or)">
+									<div id="and_or">
+										<a href="javascript:void(0);" class="othercon_left radio_off_left">
+											<img alt="">
+											<b>and</b>
+											<input type="radio" id="othercon_and" name="othercon" value="1" class="none">
+										</a>
+										<a href="javascript:void(0);" class="othercon_right radio_off_right" style="padding-left:5px;">
+											<img alt="">
+											<b>or</b>
+											<input type="radio" id="othercon_or"  name="othercon" value="2" class="none">
+										</a>
+									</div>
+								</div>
+								<div class="search_btn">
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="0">
+										Normal
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="1">
+										Effect
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="3">
+										Ritual
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="2">
+										Fusion
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="9">
+										Synchro
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="10">
+										Xyz
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="4">
+										Toon
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="5">
+										Spirit
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="6">
+										Union
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="7">
+										Gemini
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="8">
+										Tuner
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="14">
+										Flip
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="15">
+										Pendulum
+									</a>
+	
+									<a href="javascript:void(0);" class="other button_off">
+										<input type="checkbox" name="other" class="none" value="17">
+										Link
+									</a>
+	
+								</div>
+							</div>
+						</div><!--.search_body-->
+					</div><!--#search_by_other-->
+
+
+
+					<div id="search_by_jogai" style="border-top:solid 1px #90a6b0;" class="none">
+						<div class="search_body">
+							<div class="search_body_set">
+								<div class="search_title">
+									<b>Excluded Items</b>
+									<img src="external/image/parts/search_box_tips_icon.png" class="search_box_tips" alt="Exclude Selected Items">
+								</div>
+								<div class="search_btn">
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="0">
+										Normal
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="1">
+										Effect
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="3">
+										Ritual
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="2">
+										Fusion
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="9">
+										Synchro
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="10">
+										Xyz
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="4">
+										Toon
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="5">
+										Spirit
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="6">
+										Union
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="7">
+										Gemini
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="8">
+										Tuner
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="14">
+										Flip
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="15">
+										Pendulum
+									</a>
+	
+									<a href="javascript:void(0);" class="jogai button_off">
+										<input type="checkbox" name="jogai" class="none" value="17">
+										Link
+									</a>
+	
+								</div>
+							</div>
+						</div><!--.search_body-->
+					</div><!--#search_by_jogai-->
+
+
+				</div><!--#search_box-->
+
+			</form><!--#form_search-->
+	
+			<br>
+
+
+			<table style="margin:0 auto;width:100%;border-spacing: 0px;">
+				<tr>
+				<td valign="top" style="padding: 0px;">
+
+
+					<span class="f_right" style="margin-left:10px;">
+						<select id="mode" style="width:110px;">
+							<option value="1">View as Gallery</option>
+							<option value="2">View as List</option>
+						</select>
+					</span>
+
+	
+	
+					<span class="f_right" style="margin-left:10px;">
+						<select id="rp" style="width:170px;">
+							<option value="10">Show 10 items per page.</option>
+							<option value="50">Show 50 items per page.</option>
+							<option value="100">Show 100 items per page.</option>
+						</select>
+					</span>
+
+					<span class="f_right">
+						<select id="sort" style="width:260px;">
+							<option value="1">Sort by Name</option>
+							<option value="2">Sort by Level/Rank (Desc.)</option>
+							<option value="3">Sort by Level/Rank (Asc.)</option>
+							<option value="4">Sort by ATK (Desc.)</option>
+							<option value="5">Sort by ATK (Asc.)</option>
+							<option value="6">Sort by DEF (Desc.)</option>
+							<option value="7">Sort by DEF (Asc.)</option>
+							<option value="8">Sort by Pendulum Scale (Desc.)</option>
+							<option value="9">Sort by Pendulum Scale (Asc.)</option>
+							<option value="11">Sort by Link Rating (Desc.)</option>
+							<option value="12">Sort by Link Rating (Asc.)</option>
+						</select>
+					</span>
+	
+
+					<div class="page_num_title">
+						<div>
+							<strong>
+	
+	
+								Search Results: 1 - 10 of 8,700
+	
+							</strong>
+						</div>
+					</div>
+					<br class="f_del">
+
+
+<!--シェア追加-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+<!--シェア追加-->
+<table style="margin-top:5px;width:100%;text-align: center;">
+	<tr>
+		<td style="width:560px;">&nbsp;</td>
+		<td>
+			
+			<iframe src="//platform.twitter.com/widgets/tweet_button.html?url=http%3A%2F%2Fwww.db.yugioh-card.com%2Fyugiohdb%2Fcard_search.action%3Fope%3D1%26sess%3D1%26stype%3D1%26othercon%3D2%26rp%3D10%26page%3D1%26request_locale%3Den&amp;lang=en&amp;count=horizontal&amp;hashtags=YugiohDB_EN" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:20px;" allowTransparency="true"></iframe>
+		</td>
+		<td>
+			
+			<iframe src="//www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.db.yugioh-card.com%2Fyugiohdb%2Fcard_search.action%3Fope%3D1%26sess%3D1%26stype%3D1%26othercon%3D2%26rp%3D10%26page%3D1%26request_locale%3Den&amp;send=false&amp;layout=button_count&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;locale=en_US" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:100px; height:20px;" allowTransparency="true"></iframe>
+		</td>
+		<td style="display: block;margin:0 10px 0 0;">
+			
+			<div class="fb-share-button" data-href="http://www.db.yugioh-card.com/yugiohdb/card_search.action?ope=1&sess=1&stype=1&othercon=2&rp=10&page=1&request_locale=en" data-layout="button_count" data-size="small" ></div>
+		</td>
+		<td>
+			<div class="line-it-button" style="display: none;" data-lang="en" data-type="share-a" data-url="http%3A%2F%2Fwww.db.yugioh-card.com%2Fyugiohdb%2Fcard_search.action%3Fope%3D1%26sess%3D1%26stype%3D1%26othercon%3D2%26rp%3D10%26page%3D1%26request_locale%3Den"></div>
+			<script src="https://d.line-scdn.net/r/web/social-plugin/js/thirdparty/loader.min.js" async="async" defer="defer"></script>
+		</td>
+	</tr>
+</table>
+
+					<div class="list_style">
+						<ul class="box_list">
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>&quot;A&quot; Cell Breeding Device</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_spell.png" alt="SPELL" title="SPELL">
+											<span>SPELL</span>
+										</span>
+		
+		
+										<span class="box_card_effect">
+											<img class="icon_img" src="external/image/parts/effect/effect_icon_continuous.png" alt="Continuous" title="Continuous">
+											<span>Continuous</span>
+										</span>
+		
+		
+		
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										During each of your Standby Phases, put 1 A-Counter on 1 face-up monster your opponent controls.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_0_1" alt="&quot;A&quot; Cell Breeding Device" title="&quot;A&quot; Cell Breeding Device" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=7128">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>&quot;A&quot; Cell Incubator</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_spell.png" alt="SPELL" title="SPELL">
+											<span>SPELL</span>
+										</span>
+		
+		
+										<span class="box_card_effect">
+											<img class="icon_img" src="external/image/parts/effect/effect_icon_continuous.png" alt="Continuous" title="Continuous">
+											<span>Continuous</span>
+										</span>
+		
+		
+		
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										Each time an A-Counter(s) is removed from play by a card effect, place 1 A-Counter on this card. When this card is destroyed, distribute the A-Counters on this card among face-up monsters.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_1_1" alt="&quot;A&quot; Cell Incubator" title="&quot;A&quot; Cell Incubator" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=7315">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>&quot;A&quot; Cell Recombination Device</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_spell.png" alt="SPELL" title="SPELL">
+											<span>SPELL</span>
+										</span>
+		
+		
+										<span class="box_card_effect">
+											<img class="icon_img" src="external/image/parts/effect/effect_icon_quickplay.png" alt="Quick-Play" title="Quick-Play">
+											<span>Quick-Play</span>
+										</span>
+		
+		
+		
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										Target 1 face-up monster on the field; send 1 "Alien" monster from your Deck to the Graveyard, and if you do, place A-Counters on that monster equal to the Level of the sent monster. During your Main Phase, except the turn this card was sent to the Graveyard: You can banish this card from your Graveyard; add 1 "Alien" monster from your Deck to your hand.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_2_1" alt="&quot;A&quot; Cell Recombination Device" title="&quot;A&quot; Cell Recombination Device" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=12653">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>&quot;A&quot; Cell Scatter Burst</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_spell.png" alt="SPELL" title="SPELL">
+											<span>SPELL</span>
+										</span>
+		
+		
+										<span class="box_card_effect">
+											<img class="icon_img" src="external/image/parts/effect/effect_icon_quickplay.png" alt="Quick-Play" title="Quick-Play">
+											<span>Quick-Play</span>
+										</span>
+		
+		
+		
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										Select 1 face-up "Alien" monster you control. Destroy it and distribute new A-Counters equal to its Level among your opponent's face-up monsters.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_3_1" alt="&quot;A&quot; Cell Scatter Burst" title="&quot;A&quot; Cell Scatter Burst" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=6994">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>1st Movement Solo</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_spell.png" alt="SPELL" title="SPELL">
+											<span>SPELL</span>
+										</span>
+		
+		
+		
+		
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										If you control no monsters: Special Summon 1 Level 4 or lower "Melodious" monster from your hand or Deck. You can only activate 1 "1st Movement Solo" per turn. You cannot Special Summon monsters during the turn you activate this card, except "Melodious" monsters.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_4_1" alt="1st Movement Solo" title="1st Movement Solo" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=11391">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>3-Hump Lacooda</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_earth.png" alt="EARTH" title="EARTH">
+											<span>EARTH</span>
+										</span>
+		
+		
+		
+		
+			
+			
+										<span class="box_card_level_rank level">
+											<img class="icon_img" src="external/image/parts/icon_level.png" alt="Level" title="Level">
+											<span>Level 3</span>
+										</span>
+			
+		
+		
+										<span class="card_info_species_and_other_item">
+											[<!--
+										 -->Beast<!--
+			
+										 -->/<!--
+										 -->Effect<!--
+			
+			
+			
+										 -->]
+										</span>
+										<span class="atk_power">ATK 500</span>
+										
+										
+											<span class="def_power">DEF 1500</span>
+										
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										If there are 3 face-up "3-Hump Lacooda" cards on your side of the field, Tribute 2 of them to draw 3 cards.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_5_1" alt="3-Hump Lacooda" title="3-Hump Lacooda" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=6032">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>4-Starred Ladybug of Doom</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_wind.png" alt="WIND" title="WIND">
+											<span>WIND</span>
+										</span>
+		
+		
+		
+		
+			
+			
+										<span class="box_card_level_rank level">
+											<img class="icon_img" src="external/image/parts/icon_level.png" alt="Level" title="Level">
+											<span>Level 3</span>
+										</span>
+			
+		
+		
+										<span class="card_info_species_and_other_item">
+											[<!--
+										 -->Insect<!--
+			
+										 -->/<!--
+										 -->Effect<!--
+			
+			
+			
+										 -->]
+										</span>
+										<span class="atk_power">ATK 800</span>
+										
+										
+											<span class="def_power">DEF 1200</span>
+										
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										FLIP: Destroy all Level 4 monsters your opponent controls.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_6_1" alt="4-Starred Ladybug of Doom" title="4-Starred Ladybug of Doom" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=5139">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>7</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_spell.png" alt="SPELL" title="SPELL">
+											<span>SPELL</span>
+										</span>
+		
+		
+										<span class="box_card_effect">
+											<img class="icon_img" src="external/image/parts/effect/effect_icon_continuous.png" alt="Continuous" title="Continuous">
+											<span>Continuous</span>
+										</span>
+		
+		
+		
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										When there are 3 face-up "7" cards on your side of the field, draw 3 cards from your Deck. Then destroy all "7" cards. When this card is sent directly from the field to your Graveyard, increase your Life Points by 700 points.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_7_1" alt="7" title="7" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=6053">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>7 Colored Fish</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_water.png" alt="WATER" title="WATER">
+											<span>WATER</span>
+										</span>
+		
+		
+		
+		
+			
+			
+										<span class="box_card_level_rank level">
+											<img class="icon_img" src="external/image/parts/icon_level.png" alt="Level" title="Level">
+											<span>Level 4</span>
+										</span>
+			
+		
+		
+										<span class="card_info_species_and_other_item">
+											[<!--
+										 -->Fish<!--
+			
+										 -->/<!--
+										 -->Normal<!--
+			
+			
+			
+										 -->]
+										</span>
+										<span class="atk_power">ATK 1800</span>
+										
+										
+											<span class="def_power">DEF 800</span>
+										
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										A rare rainbow fish that has never been caught by mortal man.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_8_1" alt="7 Colored Fish" title="7 Colored Fish" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=4446">
+							</li>
+	
+							<li>
+								<dl>
+									<dt class="box_card_name">
+										<span></span>
+										<span class="card_status">
+										<strong>7 Completed</strong>
+		
+		
+										</span>
+									</dt>
+									<dd class="box_card_spec">
+		
+										<span class="box_card_attribute">
+											<img class="icon_img" src="external/image/parts/attribute/attribute_icon_spell.png" alt="SPELL" title="SPELL">
+											<span>SPELL</span>
+										</span>
+		
+		
+										<span class="box_card_effect">
+											<img class="icon_img" src="external/image/parts/effect/effect_icon_equip.png" alt="Equip" title="Equip">
+											<span>Equip</span>
+										</span>
+		
+		
+		
+		
+		
+										<span class="blank">&nbsp;</span>
+		
+									</dd>
+		
+									<dd class="box_card_text">
+		
+										Activate this card by choosing ATK or DEF; equip only to a Machine-Type monster. It gains 700 ATK or DEF, depending on the choice.
+		
+									</dd>
+									<dd class="box_card_img">
+		
+		
+										<img id="card_image_9_1" alt="7 Completed" title="7 Completed" class="none">
+		
+									</dd>
+								</dl>
+								<input type="hidden" class="link_value" value="/yugiohdb/card_search.action?ope=2&cid=4806">
+							</li>
+	
+						</ul><!--.box_list-->
+					</div><!--.list_style-->
+
+
+					<div class="page_num">
+						<span>
+	
+	
+			
+								<a class="nowpage">1</a>
+		
+		
+	
+			
+		
+								<a href="javascript:ChangePage(2)" title="Page 2">2</a>
+		
+	
+			
+		
+								<a href="javascript:ChangePage(3)" title="Page 3">3</a>
+		
+	
+			
+		
+								<a href="javascript:ChangePage(4)" title="Page 4">4</a>
+		
+	
+			
+		
+								<a href="javascript:ChangePage(5)" title="Page 5">5</a>
+		
+	
+	
+								<a href="javascript:ChangePage(2)" title="Page 2">&raquo;</a>
+	
+						</span>
+					</div>
+
+				</td>
+				</tr>
+			</table>
+
+		</div><!--#article_body-->
+	</article>
+
+<input type="hidden" name="sv" value="yugiohdb-ap01.gs-ec2">
+
+
+
+
+
+	<div id="tsl_notice" class="box_default">
+		<p class="tsl_title">Important Notice</p>
+		<p class="tsl_text">Starting from 04/01/2018: If you are using certain environments, such as <span>"Windows Vista or older," "Android 4.4 or older," or "IE9 or older,"</span> you may be unable to view the Card Database.</p>
+		<div class="tsl_sab_text">
+			<p>Starting from 04/01/2018: In order to provide a more enhanced security system, the Yu-Gi-Oh! TCG Card Database will no longer support Internet Communication Encryption Scheme "TLS 1.0" and "TLS 1.1." If you are using an environment which is not compatible with TLS 1.2 or later, you may be unable to view the Card Database.</p>
+			<table>
+				<tr>
+					<th rowspan="3">(Partially) Affected Environments</th><td>Windows XP</td><td>Internet Explorer 9 or older</td>
+				</tr>
+				<tr>
+					<td>Windows Vista</td><td>Internet Explorer 9 or older</td>
+				</tr>
+				<tr>
+					<td>Android 4.4 or older</td><td>Android Browser</td>
+				</tr>
+			</table>
+			<span class="tsl_sab_kome">*Please note that if the Security Setting on your browser does not have TLS 1.2 enabled, you may be unable to view the Card Database.</span>
+		</div>
+	</div>
+	
+
+	<footer id="footer">
+		<div id="content_copyright"><img src="external/image/copyright_tgc.svg" alt="&copy;1996 KAZUKI TAKAHASHI &copy;2017 NAS・TV TOKYO" id="copyright"></div>
+		<div id="footer_meta">
+			<nav>
+				<ul>
+					<li><a href="https://www.konami.com/games/inquiry/" target="_blank">Contact</a></li><!--
+				 --><li>|</li><!--
+				 --><li><a href="https://www.konami.com/siteinfo/en/" target="_blank">Terms of Use</a></li><!--
+				 --><li>|</li><!--
+				 --><li><a href="https://legal.konami.com/kde/privacy/en/" target="_blank">Privacy Notice (Analytics)</a></li><!--
+				 --><li>|</li><!--
+				 --><li><a href="https://legal.konami.com/games/id/en/" target="_blank">Privacy Notice (KONAMI ID)</a></li>
+				</ul>
+			</nav>
+			<small>&copy;2018 Konami Digital Entertainment</small>
+		</div>
+	</footer>
+</div><!--wrapper-->
+<noscript>Please enable JavaScript in your browser.</noscript>
+
+<script type="text/javascript">
+//<![CDATA[
+(function() {
+var _analytics_scr = document.createElement('script');
+_analytics_scr.type = 'text/javascript'; _analytics_scr.async = true; _analytics_scr.src = '/_Incapsula_Resource?SWJIYLWA=719d34d31c8e3a6e6fffd425f7e032f3&ns=2&cb=1529557884';
+var _analytics_elem = document.getElementsByTagName('script')[0]; _analytics_elem.parentNode.insertBefore(_analytics_scr, _analytics_elem);
+})();
+// ]]>
+</script></body>
+</html>
+
